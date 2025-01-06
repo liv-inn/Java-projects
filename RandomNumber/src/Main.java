@@ -7,23 +7,72 @@ public class Main {
        
         
         Random number = new Random();
-        int n = number.nextInt(16);
+        int n = number.nextInt(50);
+        String bestBG = "EXO";
+        int i = 0;
 
         Scanner scanner = new Scanner(System.in);
         
-        System.out.println("Bem vindo! (>.<)/");
-        System.out.println("Jogo de Adivinhação! Descubra qual é o número, de 0 a 15!");
-        System.out.println("Insira o número: ");
+        System.out.println("Welcome! (>.<)/");
+        System.out.println("Choose a game: ");
+        System.out.println("1. Guess the Number");
+        System.out.println("2. Number Battle");
+        System.out.println("3. Guess the Word");
+        System.out.println("4. Guess the best kpop boy group in the world");
         
-        System.out.println("Está funcionando, e o número é:" + n);
+        int options = scanner.nextInt();
 
-        int numeroEscolhido = scanner.nextInt();
+        switch(options) {
+            case 1:   
+            
+                System.out.println("You chose Guess the number! :D");
+                System.out.println("Guess the number between 1 - 50");
+            
+                int userNumber = scanner.nextInt();
+        
+                if(userNumber == n){
+                    System.out.println("Você acertou :D");
+                }else{
+                    System.out.println("Você errou :(");
+                }
+                break;
 
-        if(numeroEscolhido == n){
-            System.out.println("Você acertou :D");
-        }else{
-            System.out.println("Você errou :(");
+            case 2:
+            case 3:
+            case 4:
+
+                System.out.println("You chose Guess the best kpop boy group in the world! :D");
+                 // o scanner  pode ler a nova linha restante no buffer de entrada que é deixada após a entrada anterior, principalmente se estiver usado um scanner.nextInt() ou scanner.next() 
+
+                
+
+                 while(true){
+                    System.out.println("The best boy group is: ");
+                    scanner.nextLine();
+                    String userGuessBG = scanner.nextLine();
+                    i++;
+
+                        if(userGuessBG.equals("BTS") ){
+                            System.out.println("Nooo :(");
+                            break;
+                        }
+                        else if (userGuessBG.equals(bestBG) ) {
+                            System.out.println("Congratulations!! You got it right after " + i + " attempts.");
+                            break;
+                        } else{
+                            System.out.println("Try again :)");
+                            
+                        }
+                            
+                        }
+                        break;
+                  
+            default: 
+                System.out.println("This option is not valid :( try again!");
+
         }
+
+      
     }
 
 
