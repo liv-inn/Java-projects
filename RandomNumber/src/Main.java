@@ -7,9 +7,8 @@ public class Main {
        
         
         Random number = new Random();
-        int n = number.nextInt(50);
-        String bestBG = "EXO";
-        int i = 0;
+        
+       
 
         Scanner scanner = new Scanner(System.in);
         
@@ -24,9 +23,11 @@ public class Main {
 
         switch(options) {
             case 1:   
+            int n = number.nextInt(50);
             
                 System.out.println("You chose Guess the number! :D");
                 System.out.println("Guess the number between 1 - 50");
+                System.out.println("O numero é " + n );
             
                 int userNumber = scanner.nextInt();
         
@@ -38,8 +39,28 @@ public class Main {
                 break;
 
             case 2:
+
+            System.out.println("You chose Number Battle! :D");
+            System.out.println("The player and the computer pick random numbers(1-10000); the highest number wins!");
+            System.out.println("Enter your number and good luck!");
+            
+            int nBattleUser = scanner.nextInt();
+            int nBattlePC = number.nextInt(10000);
+
+            if(nBattlePC > nBattleUser){
+                System.out.println("PC won! Better luck next time... you entered " + nBattleUser +  " and the PC chose " + nBattlePC +"!");
+            } else if (nBattlePC < nBattleUser){
+                System.out.println("You win! Congratulations, you entered " + nBattleUser +  " and the PC chose " + nBattlePC +"!");
+            }
+
+            break;
+
+
             case 3:
             case 4:
+
+            String bestBG = "EXO";
+            int i = 0;
 
                 System.out.println("You chose Guess the best kpop boy group in the world! :D");
                  // o scanner  pode ler a nova linha restante no buffer de entrada que é deixada após a entrada anterior, principalmente se estiver usado um scanner.nextInt() ou scanner.next() 
